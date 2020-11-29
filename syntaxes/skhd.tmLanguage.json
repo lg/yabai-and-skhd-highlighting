@@ -1,0 +1,38 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "skhd",
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#commands"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [{
+        "name": "comment.line.number-sign.skhd",
+        "match": "#(.*)$"
+      }]
+    },
+
+    "commands": {
+      "patterns": [{
+        "begin": "^(.+?)\\s+?(:)",
+        "beginCaptures": {
+          "1": {
+            "name": "storage.type"
+          },
+          "2": {
+            "name": "markup.bold"
+          }
+        },
+        "end": ".(?<!\\\\)$",
+        "name": "string.unquoted.skhd"
+      }]
+    }
+  },
+
+  "scopeName": "source.skhd"
+}

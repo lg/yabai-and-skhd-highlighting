@@ -1,0 +1,25 @@
+{
+  "name": "skhd-highlighting",
+  "displayName": "skhd Highlighting",
+  "description": "Highlighting for .skhdrc configuration files",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.51.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "skhd",
+      "aliases": ["skhd"],
+      "extensions": [".skhdrc", "skhdrc"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "skhd",
+      "scopeName": "source.skhd",
+      "path": "./syntaxes/skhd.tmLanguage.json"
+    }]
+  }
+}
