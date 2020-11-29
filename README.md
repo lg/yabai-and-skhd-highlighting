@@ -11,9 +11,9 @@ If you're getting this extension via source code, put this directory into your `
 
 ## Todo
 
-- Implement Yabai highlighting in here too
-- Instead of using the string formatting, use shell formatting, but be careful about the line break `\` character
-- Use the full-on tokenized stuff Asmund [details for us](https://github.com/koekeishiya/skhd#configuration)
+- Implement Yabai highlighting in this package too and use it within skhd
+- Use the full-on tokenized stuff Asmund [details](https://github.com/koekeishiya/skhd#configuration) for us
+- Write tests
 
 ## Changelog
 

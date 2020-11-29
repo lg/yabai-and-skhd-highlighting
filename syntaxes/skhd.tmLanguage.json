@@ -19,7 +19,7 @@
 
     "commands": {
       "patterns": [{
-        "begin": "^(.+?)\\s+?(:)",
+        "begin": "\\s*(.+?)\\s+?(:)",
         "beginCaptures": {
           "1": {
             "name": "storage.type"
@@ -28,8 +28,19 @@
             "name": "markup.bold"
           }
         },
-        "end": ".(?<!\\\\)$",
-        "name": "string.unquoted.skhd"
+        "end": "(.+(?<!\\\\)$)",
+        "endCaptures": {
+          "1": {
+            "name": "source.shell.skhd",
+            "patterns": [{
+              "include": "source.shell"
+            }]
+          }
+        },
+        "contentName": "source.shell.skhd",
+        "patterns": [{
+          "include": "source.shell"
+        }]
       }]
     }
   },
