@@ -22,24 +22,24 @@
         "begin": "\\s*(.+?)\\s+?(:)",
         "beginCaptures": {
           "1": {
-            "name": "storage.type"
+            "name": "storage.type.skhd"
           },
           "2": {
-            "name": "markup.bold"
+            "name": "markup.bold.skhd"
           }
         },
         "end": "(.+(?<!\\\\)$)",
         "endCaptures": {
           "1": {
-            "name": "source.shell.skhd",
+            "name": "source.yabai.skhd",
             "patterns": [{
-              "include": "source.shell"
+              "include": "source.yabai"
             }]
           }
         },
-        "contentName": "source.shell.skhd",
+        "contentName": "source.yabai.skhd",
         "patterns": [{
-          "include": "source.shell"
+          "include": "source.yabai"
         }]
       }]
     }

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "yabai",
+  "patterns": [
+    {
+      "include": "source.shell"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#full-commands"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [{
+        "name": "comment.line.number-sign.yabai",
+        "match": "#(.*)$"
+      }]
+    },
+    "keywords": {
+      "patterns": [{
+        "match": "\\b(sudo)\\b",
+        "name": "support.function.builtin.shell"
+      }]
+    },
+    "full-commands": {
+      "patterns": [{
+        "comment": "for debugging this, please see: https://regex101.com/r/yWJxQO/1/",
+        "mDDDatch": "(yabai)\\s+(-[a-z])",
+        "match": "(yabai)\\s+(-[a-z])\\s+(\\S+)\\s+((?:--\\S+\\s?){2,}|(?:--\\S+)|\\S+)(?:[\\r\\n]|\\s+(.*))",
+        "captures": {
+          "1": {
+            "name": "markup.bold.skhd"
+          },
+          "2": {
+            "name": "markup.bold.skhd"
+          },
+          "3": {
+            "name": "keyword.control"
+          },
+          "4": {
+            "name": "entity.name.tag"
+          },
+          "5": {
+            "name": "constant"
+          }
+        }
+      }]
+    }
+  },
+
+  "scopeName": "source.yabai"
+}

@@ -1,7 +1,7 @@
 {
-  "name": "skhd-highlighting",
-  "displayName": "skhd Highlighting",
-  "description": "Highlighting for .skhdrc configuration files",
+  "name": "yabai-and-skhd-highlighting",
+  "displayName": "yabai and skhd Highlighting",
+  "description": "Highlighting for .yabairc and .skhdrc configuration files",
   "version": "1.0.0",
   "engines": {
     "vscode": "^1.51.0"
@@ -10,16 +10,31 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "skhd",
-      "aliases": ["skhd"],
-      "extensions": [".skhdrc", "skhdrc"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "skhd",
-      "scopeName": "source.skhd",
-      "path": "./syntaxes/skhd.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "yabai",
+        "aliases": ["yabai"],
+        "extensions": [".yabairc", "yabairc"],
+        "configuration": "./yabai-language-configuration.json"
+      },
+      {
+        "id": "skhd",
+        "aliases": ["skhd"],
+        "extensions": [".skhdrc", "skhdrc"],
+        "configuration": "./skhd-language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "yabai",
+        "scopeName": "source.yabai",
+        "path": "./syntaxes/yabai.tmLanguage.json"
+      },
+      {
+        "language": "skhd",
+        "scopeName": "source.skhd",
+        "path": "./syntaxes/skhd.tmLanguage.json"
+      }
+    ]
   }
 }
