@@ -30,24 +30,48 @@
     },
     "full-commands": {
       "patterns": [{
-        "comment": "for debugging this, please see: https://regex101.com/r/yWJxQO/1/",
-        "mDDDatch": "(yabai)\\s+(-[a-z])",
-        "match": "(yabai)\\s+(-[a-z])\\s+(\\S+)\\s+((?:--\\S+\\s?){2,}|(?:--\\S+)|\\S+)(?:[\\r\\n]|\\s+(.*))",
+        "comment": "for debugging this, please see: https://regex101.com/r/yWJxQO/4. it's not as bad as it looks.",
+        "match": "(yabai\\s+-+m(?:essage)*)\\s+(?:(config)\\s*(--\\S+\\s+\\S+)*|([\\w\\.]+)\\s+(?!-)(\\S+)|([\\w\\.]+))\\s+(\\S+\\s+(?=\\-)\\S+|\\S+)(?:\\s*(?=$|\\#|\\||\\;|\\&|\\<)|\\s+(.*?)\\s*(?=$|\\#|\\||\\;|\\&|\\<))",
         "captures": {
           "1": {
+            "comment": "cmdline",
             "name": "markup.bold.skhd"
           },
           "2": {
-            "name": "markup.bold.skhd"
-          },
-          "3": {
+            "comment": "domain",
             "name": "keyword.control"
           },
+          "3": {
+            "comment": "context",
+            "name": "constant"
+          },
           "4": {
-            "name": "entity.name.tag"
+            "comment": "domain",
+            "name": "keyword.control"
           },
           "5": {
+            "comment": "context",
             "name": "constant"
+          },
+          "6": {
+            "comment": "domain",
+            "name": "keyword.control"
+          },
+          "7": {
+            "name": "entity.name.tag"
+          },
+          "8": {
+            "patterns": [{
+              "match": "action=\"(.*)\"",
+              "captures": {
+                "1": {
+                  "name": "meta.scope.action.yabai",
+                  "patterns": [{
+                    "include": "#full-commands"
+                  }]
+                }
+              }
+            }]
           }
         }
       }]
