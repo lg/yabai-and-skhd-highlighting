@@ -30,8 +30,8 @@
     },
     "full-commands": {
       "patterns": [{
-        "comment": "for debugging this, please see: https://regex101.com/r/yWJxQO/4. it's not as bad as it looks.",
-        "match": "(yabai\\s+-+m(?:essage)*)\\s+(?:(config)\\s*(--\\S+\\s+\\S+)*|([\\w\\.]+)\\s+(?!-)(\\S+)|([\\w\\.]+))\\s+(\\S+\\s+(?=\\-)\\S+|\\S+)(?:\\s*(?=$|\\#|\\||\\;|\\&|\\<)|\\s+(.*?)\\s*(?=$|\\#|\\||\\;|\\&|\\<))",
+        "comment": "for debugging this, please see: https://regex101.com/r/yWJxQO/5. it's not as bad as it looks.",
+        "match": "(yabai\\s+-+m(?:essage)*)\\s+(?:(config)\\s*(--\\S+\\s+\\S+)*|([\\w\\.]+)\\s+(?!-)(\\S+)|([\\w\\.]+))\\s+(\\S+\\s+(?=\\-)\\S+|\\S+)",
         "captures": {
           "1": {
             "comment": "cmdline",
@@ -59,19 +59,6 @@
           },
           "7": {
             "name": "entity.name.tag"
-          },
-          "8": {
-            "patterns": [{
-              "match": "action=\"(.*)\"",
-              "captures": {
-                "1": {
-                  "name": "meta.scope.action.yabai",
-                  "patterns": [{
-                    "include": "#full-commands"
-                  }]
-                }
-              }
-            }]
           }
         }
       }]
